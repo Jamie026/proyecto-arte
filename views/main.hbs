@@ -1,0 +1,62 @@
+<main class="container py-5">
+    <section class="transparent-effect px-4 py-4">
+        <form id="datos-weather">
+            <div class="row">
+                <div class="col-sm-12 col-md-6 mb-3">
+                    <select class="form-select" id="selector-dinamico-dato" name="dato" required>
+                        <option selected disabled value="">Indique un dato</option>
+                        <option class="capitalize" value="temperature">Temperatura del Aire en C°</option>
+                        <option class="capitalize" value="radiation_direct_horizontal">Radiación directa en W/m&sup2;.</option>
+                        <option class="capitalize" value="radiation_diffuse_horizontal">Radiación difusa en W/m&sup2;.</option>
+                    </select>
+                </div>
+                <div class="col-sm-12 col-md-6 mb-3">
+                    <select class="form-select" id="selector-dinamico-ubicacion" name="ubicacion" required>
+                        <option selected disabled value="">Indique una ubicación</option>
+                        <option value="AT">AT (Austria)</option>
+                        <option value="BE">BE (Bélgica)</option>
+                        <option value="GB">GB (Reino Unido)</option>
+                        <option value="DK">DK (Dinamarca)</option>
+                        <option value="FI">FI (Finlandia)</option>
+                        <option value="FR">FR (Francia)</option>
+                        <option value="DE">DE (Alemania)</option>
+                        <option value="GR">GR (Grecia)</option>
+                        <option value="HU">HU (Hungría)</option>
+                        <option value="IE">IE (Irlanda)</option>
+                        <option disabled value="">Más proximamente...</option>
+                    </select>
+                </div>
+                <div class="col-12">
+                    <div class="input-group h-100">
+                        <span class="input-group-text h-100" id="date-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-calendar-range" viewBox="0 0 16 16">
+                                <path d="M9 7a1 1 0 0 1 1-1h5v2h-5a1 1 0 0 1-1-1M1 9h4a1 1 0 0 1 0 2H1z"/>
+                                <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5M1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4z"/>
+                            </svg>
+                        </span>
+                        <input class="form-control h-100" placeholder="Indique una fecha YYYY-MM-DD" type="text" aria-describedby="date-icon" name="fecha" id="dateRangePicker">
+                    </div>  
+                </div>
+                <div class="col-12">
+                    <div class="form-text text-light mt-3">
+                        Fecha mínima: 1980-01-01 | Fecha máxima: 2019-12-31
+                    </div>
+                </div>
+                <div class="col-12">
+                    <button type="submit" class="btn btn-primary w-100 mx-2 my-3">Cargar datos</button>
+                </div>
+
+                <div class="bg-light">
+                    <canvas id="myChart" class="w-100"></canvas>
+                </div>
+                
+                <div id="modal" class="modal">
+                    <div class="modal-content">
+                        <span class="closeBtn">&times;</span>
+                        <img src="" id="imagen-dato" class="imagen-dato" alt="Imagen">
+                    </div>
+                </div>
+            </div>
+        </form>
+    </section>
+</main>
